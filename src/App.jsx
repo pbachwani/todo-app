@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import "./styles.css";
+// import "./styles.css";
 import NewTodoForm from "./NewTodoForm";
 import TodoList from "./TodoList";
+import "./index.css";
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
@@ -45,13 +46,13 @@ export default function App() {
     });
   }
 
-  console.log(todos);
+  // console.log(todos);
 
   return (
-    <>
+    <div className="bg-[#333] flex flex-col items-center h-screen w-full text-white p-4 overflow-auto">
       <NewTodoForm onSubmit={addTodo} />
-      <h1 className="header">To-do List</h1>
+
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-    </>
+    </div>
   );
 }
