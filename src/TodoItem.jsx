@@ -1,17 +1,17 @@
 // eslint-disable-next-line react/prop-types
 const TodoItem = ({ completed, id, title, toggleTodo, deleteTodo }) => {
   return (
-    <li className="flex gap-2">
-      <input
-        type="checkbox"
-        checked={completed}
-        onChange={(e) => toggleTodo(id, e.target.checked)}
-      />
+    <li className="flex gap-2 justify-between">
       <label
         className={`text-blue-200 flex gap-1 cursor-pointer checked:line-through ${
           completed ? " text-gray-500 line-through" : ""
         }`}
       >
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={(e) => toggleTodo(id, e.target.checked)}
+        />
         {title}
       </label>
       <button
